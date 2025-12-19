@@ -1,0 +1,53 @@
+schema_version = "1.0.0"
+
+# Unique identifier for the extension
+id = "quick_signs"
+
+# Extension version (semantic versioning)
+version = "1.0.0"
+
+# Display name
+name = "QuickSigns"
+
+# Short description (one line)
+tagline = "Create 3D text signs with Google Fonts integration"
+
+# Extension maintainer/author
+maintainer = "Your Name <your.email@example.com>"
+
+# Extension type
+type = "add-on"
+
+# Minimum Blender version required
+blender_version_min = "4.2.0"
+
+# License identifier
+# Options: GPL-2.0-or-later, GPL-3.0-or-later, MIT, Apache-2.0, BSD-3-Clause, etc.
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+
+# Optional: Website
+# website = "https://github.com/yourusername/blender-signs"
+
+# Optional: Copyright
+# copyright = [
+#   "2024 Your Name",
+# ]
+
+# Tags for categorization and search
+tags = [
+  "3D View",
+  "Modeling",
+  "Object",
+]
+
+# Permissions required by the extension
+[permissions]
+network = "Access Google Fonts API for font search and download"
+files = "Read and write font files to local storage"
+
+# Optional: Wheels (Python dependencies)
+# Currently using only built-in Python modules (urllib, json, os)
+# [wheels]
+# "./wheels/requests-2.31.0-py3-none-any.whl"
