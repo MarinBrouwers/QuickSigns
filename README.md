@@ -11,13 +11,13 @@ A Blender add-on for creating 3D text signs with Google Fonts integration and cu
 
 ## Installation
 
-1. **Locate the add-on folder**: `\QuickSigns`
+1. **Locate the add-on folder** where you extracted/downloaded QuickSigns
 
 2. **Install in Blender**:
    - Open Blender
    - Go to `Edit` → `Preferences` → `Add-ons`
    - Click `Install...` button
-   - Navigate to `\QuickSigns`
+   - Navigate to the QuickSigns folder
    - Select `__init__.py`
    - Click `Install Add-on`
 
@@ -33,9 +33,11 @@ A Blender add-on for creating 3D text signs with Google Fonts integration and cu
 
 ### Get Google Fonts API Key
 
-Your API key:
-
-(If you need a new one: Go to https://console.developers.google.com/ → Enable Google Fonts API → Create credentials)
+1. Go to https://console.developers.google.com/
+2. Create a new project (or select existing)
+3. Enable Google Fonts Developer API
+4. Go to Credentials → Create Credentials → API Key
+5. Copy your API key
 
 ### Enter API Key in Blender
 
