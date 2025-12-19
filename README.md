@@ -33,7 +33,7 @@ A Blender add-on for creating 3D text signs with Google Fonts integration and cu
 
 ### Get Google Fonts API Key
 
-Your API key: `AIzaSyC0_P6INbKLWV5kUIbjk-HGkMv4XCazzG0`
+Your API key:
 
 (If you need a new one: Go to https://console.developers.google.com/ → Enable Google Fonts API → Create credentials)
 
