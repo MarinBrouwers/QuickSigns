@@ -4,7 +4,7 @@ schema_version = "1.0.0"
 id = "quick_signs"
 
 # Extension version (semantic versioning)
-version = "1.0.0"
+version = "1.0.1"
 
 # Display name
 name = "QuickSigns"
@@ -37,9 +37,7 @@ license = [
 
 # Tags for categorization and search
 tags = [
-  "3D View",
-  "Modeling",
-  "Object",
+  "Import-Export",
 ]
 
 # Permissions required by the extension

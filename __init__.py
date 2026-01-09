@@ -32,6 +32,18 @@ from bpy.types import (
 
 
 # ============================================================================
+# Helper Functions
+# ============================================================================
+
+def check_online_access(operator):
+    """Check if online access is enabled in user preferences"""
+    if not bpy.context.preferences.system.use_online_access:
+        operator.report({'ERROR'}, "Online access is disabled. Enable it in Edit -> Preferences -> System -> Network -> Allow Online Access")
+        return False
+    return True
+
+
+# ============================================================================
 # Google Fonts API Integration
 # ============================================================================
 
@@ -42,6 +54,10 @@ class SIGNS_OT_SearchFonts(Operator):
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
+        # Check online access permission
+        if not check_online_access(self):
+            return {'CANCELLED'}
+
         props = context.scene.signs_props
         api_key = props.google_fonts_api_key
 
@@ -97,6 +113,10 @@ class SIGNS_OT_DownloadFont(Operator):
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
+        # Check online access permission
+        if not check_online_access(self):
+            return {'CANCELLED'}
+
         props = context.scene.signs_props
 
         if props.font_list_index < 0 or props.font_list_index >= len(props.font_list):
@@ -161,6 +181,10 @@ class SIGNS_OT_PreviewFont(Operator):
         font_path = os.path.join(fonts_dir, font_filename)
 
         if not os.path.exists(font_path):
+            # Check online access permission before downloading
+            if not check_online_access(self):
+                return {'CANCELLED'}
+
             # Download the font
             try:
                 os.makedirs(fonts_dir, exist_ok=True)
@@ -318,6 +342,10 @@ def update_font_preview(self, context):
         return
 
     if self.font_list_index < 0 or self.font_list_index >= len(self.font_list):
+        return
+
+    # Check online access permission
+    if not bpy.context.preferences.system.use_online_access:
         return
 
     selected_font = self.font_list[self.font_list_index]
